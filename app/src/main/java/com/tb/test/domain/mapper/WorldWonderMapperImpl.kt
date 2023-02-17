@@ -13,7 +13,8 @@ class WorldWonderMapperImpl @Inject constructor(private val safeUrl: SafeUrl) :
             id = entity.id,
             name = entity.name,
             shortInfo = entity.shortInfo,
-            imageUrl = safeUrl.makeUrlSafe(entity.image)
+            imageUrl = safeUrl.makeUrlSafe(entity.image),
+            location = entity.regionLong
         )
     }
 

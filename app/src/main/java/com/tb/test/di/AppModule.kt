@@ -2,7 +2,9 @@ package com.tb.test.di
 
 import android.app.Application
 import android.content.res.AssetManager
+import androidx.paging.PagingConfig
 import com.google.gson.Gson
+import com.tb.test.di.qualifier.DefaultPagingConfig
 import com.tb.test.di.qualifier.IODispatcher
 import dagger.Module
 import dagger.Provides
@@ -26,4 +28,10 @@ class AppModule {
 
     @Provides
     fun provideAssetManager(application: Application): AssetManager = application.assets
+
+    @Provides
+    @DefaultPagingConfig
+    fun provideDefaultPagingConfig(): PagingConfig {
+        return PagingConfig(pageSize = 10, prefetchDistance = 0)
+    }
 }

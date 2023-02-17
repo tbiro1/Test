@@ -26,8 +26,8 @@ class WorldWonderStorageImpl @Inject constructor(
     private var cache: List<WorldWonderEntity>? = null
 
     override suspend fun getWonders(offset: Int, size: Int): List<WorldWonderEntity> {
-        return withContext(ioDispatcher){
-            ensureCache().subList(offset, size)
+        return withContext(ioDispatcher) {
+            ensureCache().subList(offset, offset + size)
         }
     }
 
