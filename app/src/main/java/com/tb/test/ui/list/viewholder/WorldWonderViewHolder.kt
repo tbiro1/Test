@@ -1,8 +1,10 @@
 package com.tb.test.ui.list.viewholder
 
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.tb.test.databinding.ViewholderWorldWonderBinding
 
-class WorldWonderViewHolder() : ViewHolder() {
+class WorldWonderViewHolder(private val binding: ViewholderWorldWonderBinding) :
+    ViewHolder(binding.root) {
 
     /**
      * Setup the UI from content data.
