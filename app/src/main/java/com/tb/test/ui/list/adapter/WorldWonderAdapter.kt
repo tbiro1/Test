@@ -26,15 +26,13 @@ class WorldWonderAdapter :
  */
 private class WorldWonderDiffCallback : DiffUtil.ItemCallback<WorldWonderViewHolder.Content>() {
     override fun areItemsTheSame(
-        oldItem: WorldWonderViewHolder.Content,
-        newItem: WorldWonderViewHolder.Content
+        oldItem: WorldWonderViewHolder.Content, newItem: WorldWonderViewHolder.Content
     ): Boolean {
         return oldItem == newItem
     }
 
     override fun areContentsTheSame(
-        oldItem: WorldWonderViewHolder.Content,
-        newItem: WorldWonderViewHolder.Content
+        oldItem: WorldWonderViewHolder.Content, newItem: WorldWonderViewHolder.Content
     ): Boolean {
         return oldItem == newItem
     }

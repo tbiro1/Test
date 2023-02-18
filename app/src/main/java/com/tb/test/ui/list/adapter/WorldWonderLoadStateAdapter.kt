@@ -14,17 +14,13 @@ class WorldWonderLoadStateAdapter(private val onRetry: () -> Unit) :
     }
 
     override fun onCreateViewHolder(
-        parent: ViewGroup,
-        loadState: LoadState
+        parent: ViewGroup, loadState: LoadState
     ): WorldWonderLoadStateViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         return WorldWonderLoadStateViewHolder(
             ViewholderWorldWonderLoadBinding.inflate(
-                inflater,
-                parent,
-                false
-            ),
-            onRetry
+                inflater, parent, false
+            ), onRetry
         )
 
     }

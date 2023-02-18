@@ -9,14 +9,24 @@ abstract class SafeUrlTest {
     abstract fun getInstance(): SafeUrl
 
     @Test
-    fun testUrlAgainstKnownErrors() {
-        val testData = "http://test.com//test//with///////"
-        val expected = "https://test.com/test/with/"
+    fun testAgainstBrokenUrl() {
+        val testData = "http://test.com//test/////////"
+        val expected = "https://test.com/test/"
 
         val target = getInstance()
 
         val result = target.makeUrlSafe(testData)
         assertEquals(expected, result)
+    }
+
+    @Test
+    fun testValidUrl() {
+        val testData = "https://test.com/valid_url"
+
+        val target = getInstance()
+
+        val result = target.makeUrlSafe(testData)
+        assertEquals(testData, result)
     }
 
 }

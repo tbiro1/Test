@@ -32,7 +32,7 @@ class WorldWonderStorageImpl @Inject constructor(
     }
 
     /**
-     * Load cache if necessary.
+     * Loads cache if necessary.
      */
     private suspend fun ensureCache(): List<WorldWonderEntity> {
         return cacheMutex.withLock {

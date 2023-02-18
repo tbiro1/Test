@@ -14,10 +14,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class WorldWonderListViewModel @Inject constructor(
-    pageProvider: WorldWonderPagerProvider,
-    @DefaultPagingConfig pagingConfig: PagingConfig
-) :
-    ViewModel() {
+    pageProvider: WorldWonderPagerProvider, @DefaultPagingConfig pagingConfig: PagingConfig
+) : ViewModel() {
 
     val items = pageProvider.getPager(pagingConfig).flow.map { pagingData ->
         pagingData.map { worldWonder ->
@@ -31,7 +29,9 @@ class WorldWonderListViewModel @Inject constructor(
             )
         }
     }.cachedIn(viewModelScope)
-    
+
+
+    @Suppress("UNUSED_PARAMETER") // adding detail screen will fix this
     private fun onItemClicked(content: WorldWonderViewHolder.Content) {
 
     }

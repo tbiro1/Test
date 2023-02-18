@@ -1,23 +1,19 @@
 package com.tb.test.ui.list.viewholder
 
-import android.util.Log
 import androidx.core.view.isGone
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.tb.test.databinding.ViewholderWorldWonderLoadBinding
 
 class WorldWonderLoadStateViewHolder(
-    private val binding: ViewholderWorldWonderLoadBinding,
-    onUpdate: () -> Unit
-) :
-    ViewHolder(binding.root) {
+    private val binding: ViewholderWorldWonderLoadBinding, onUpdate: () -> Unit
+) : ViewHolder(binding.root) {
 
     init {
         binding.errorUpdate.setOnClickListener { onUpdate() }
     }
 
     fun bindContent(content: LoadState) {
-        Log.d("LoadStateVH", "LoadState is: $content")
         when (content) {
             is LoadState.NotLoading -> {
                 binding.loading.isGone = true

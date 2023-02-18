@@ -6,8 +6,7 @@ import com.tb.test.domain.model.WorldWonderDetails
 import com.tb.test.utils.url.SafeUrl
 import javax.inject.Inject
 
-class WorldWonderMapperImpl @Inject constructor(private val safeUrl: SafeUrl) :
-    WorldWonderMapper {
+class WorldWonderMapperImpl @Inject constructor(private val safeUrl: SafeUrl) : WorldWonderMapper {
     override fun mapFromEntity(entity: WorldWonderEntity): WorldWonder {
         return WorldWonder(
             id = entity.id,

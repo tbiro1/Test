@@ -1,4 +1,4 @@
-package com.tb.test.utils.binding
+package com.tb.test.utils.arch.ui.binding
 
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -23,7 +23,7 @@ class FragmentViewBindingDelegate<VB : ViewBinding>(private val viewBindingClass
 
     override fun getValue(thisRef: Fragment, property: KProperty<*>): VB {
         return binding ?: getInstance(thisRef.requireView()).also { binding = it }.also {
-            thisRef.viewLifecycleOwner.lifecycle.addObserver(object:DefaultLifecycleObserver{
+            thisRef.viewLifecycleOwner.lifecycle.addObserver(object : DefaultLifecycleObserver {
                 override fun onDestroy(owner: LifecycleOwner) {
                     binding = null
                     owner.lifecycle.removeObserver(this)
@@ -32,8 +32,10 @@ class FragmentViewBindingDelegate<VB : ViewBinding>(private val viewBindingClass
         }
     }
 
+    @Suppress("UNCHECKED_CAST") // reflection
     private fun getInstance(bindTarget: View): VB {
-        return viewBindingClass.getDeclaredMethod("bind", View::class.java).invoke(null, bindTarget) as VB
+        return viewBindingClass.getDeclaredMethod("bind", View::class.java)
+            .invoke(null, bindTarget) as VB
     }
 
 }
@@ -56,4 +58,5 @@ class FragmentViewBindingDelegate<VB : ViewBinding>(private val viewBindingClass
  * ```
  * **!!Note that, this binding util has a limitation, not allowed to access binding before onViewCreated and after onDestroyView!!**
  */
-inline fun<reified VB: ViewBinding> Fragment.bindings(): FragmentViewBindingDelegate<VB> = FragmentViewBindingDelegate(VB::class.java)
+inline fun <reified VB : ViewBinding> bindings(): FragmentViewBindingDelegate<VB> =
+    FragmentViewBindingDelegate(VB::class.java)

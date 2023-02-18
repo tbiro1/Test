@@ -15,5 +15,5 @@ interface WorldWonderStorage {
      * @param offset the position of the first wonder
      * @param size the size of the wonders in the result.
      */
-    suspend fun getWonders(offset: Int, size: Int) : List<WorldWonderEntity>
+    suspend fun getWonders(offset: Int, size: Int): List<WorldWonderEntity>
 }

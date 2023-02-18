@@ -1,22 +1,26 @@
-#World wonder test application.
+# World wonder test application.
 
+### About the app:
 
-###About the app:
-This application lists the world wonders name, image and short info about the wonder.
+This application lists the world's wonders (name, image, and short info about the wonder).
 
-###About the architecture:
+### Requirements:
+* Android Studio: Android Studio Dolphin | 2021.3.1
+* Java: Java 11
 
-The architecture is a simple three layer architecture (Data, Domain, UI).
+### About the architecture:
+
+The architecture is a simple three-layer architecture (Data, Domain, UI).
+
 * **Data layer:** Responsible for reading and writing data in the persistence storage.
 * **Domain layer:** Responsible for the business logic.
 * **UI layer:** The presentation logic and MVVM.
 
-###Techs and libraries:
+### Techs and libraries:
+
 * **DI:** Dagger/Hilt
 * **Navigation:** Jetpack navigation components/Coroutines
 * **Presentation:** Android lifecycle components and Android Views (Paging V3)
-* **Logging:** Timber
 * **Serialization:** GSON for Json.
 * **Image loading:** Glide
 * **Testing:** Mockk, Turbine
-

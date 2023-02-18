@@ -15,9 +15,7 @@ class WorldWonderViewHolder(private val binding: ViewholderWorldWonderBinding) :
         binding.title.text = content.title
         binding.content.text = content.content
         binding.location.text = content.location
-        Glide.with(binding.illustration)
-            .load(content.imageUrl)
-            .placeholder(R.drawable.ic_acropolis)
+        Glide.with(binding.illustration).load(content.imageUrl).placeholder(R.drawable.ic_acropolis)
             .into(binding.illustration)
         binding.root.setOnClickListener { content.action(content) }
     }

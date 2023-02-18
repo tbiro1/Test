@@ -6,5 +6,5 @@ data class WorldWonderDetails(
     val longInfo: String,
     val imageUrl: String,
     val pageUrl: String,
-    val location:String
+    val location: String
 )

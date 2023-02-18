@@ -9,10 +9,8 @@ import javax.inject.Inject
 class WorldWonderPagerProviderImpl @Inject constructor(private val getWonderPageData: GetWonderPageData) :
     WorldWonderPagerProvider {
     override fun getPager(config: PagingConfig): Pager<Int, WorldWonder> {
-        return Pager(
-            config = config,
+        return Pager(config = config,
             initialKey = WorldWonderPagerProvider.DEFAULT_PAGE_INDEX,
-            pagingSourceFactory = { WorldWonderPagingSource(getWonderPageData) }
-        )
+            pagingSourceFactory = { WorldWonderPagingSource(getWonderPageData) })
     }
 }

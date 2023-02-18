@@ -12,7 +12,7 @@ import com.tb.test.R
 import com.tb.test.databinding.FragmentWorldWoderListBinding
 import com.tb.test.ui.list.adapter.WorldWonderAdapter
 import com.tb.test.ui.list.adapter.WorldWonderLoadStateAdapter
-import com.tb.test.utils.binding.bindings
+import com.tb.test.utils.arch.ui.binding.bindings
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch

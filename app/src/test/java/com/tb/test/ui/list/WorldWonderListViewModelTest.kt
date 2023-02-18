@@ -4,8 +4,9 @@ import androidx.paging.AsyncPagingDataDiffer
 import androidx.paging.PagingConfig
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListUpdateCallback
-import com.tb.test.domain.model.WorldWonder
 import com.tb.test.domain.usecase.GetWonderPageData
+import com.tb.test.testutils.generator.newContent
+import com.tb.test.testutils.generator.newWorldWonder
 import com.tb.test.ui.list.paging.WorldWonderPagerProviderImpl
 import com.tb.test.ui.list.viewholder.WorldWonderViewHolder
 import io.mockk.MockKAnnotations
@@ -65,16 +66,6 @@ class WorldWonderListViewModelTest {
         job.cancel()
     }
 
-
-    private fun newWorldWonder(id: Long): WorldWonder {
-        val text = "test$id"
-        return WorldWonder(id, text, text, text, text)
-    }
-
-    private fun newContent(id: Long): WorldWonderViewHolder.Content {
-        val text = "test$id"
-        return WorldWonderViewHolder.Content(id, text, text, text, text) {}
-    }
 
     private fun assertEquals(
         e: WorldWonderViewHolder.Content,

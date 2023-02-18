@@ -3,4 +3,7 @@
     <string name="lorem_title">Lorem Ipsum</string>
     <string name="lorem_1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent auctor urna lacinia mollis tempus. Fusce vel sagittis felis, vel bibendum leo. Pellentesque semper libero at viverra blandit. In finibus maximus felis vel scelerisque. Aliquam malesuada dolor in gravida convallis. Praesent porttitor gravida purus, quis laoreet dui hendrerit in. Quisque quis condimentum orci. Praesent vitae leo mollis, aliquet quam vel, porta est. Vestibulum ac ex ex.</string>
     <string name="location_title">Location:</string>
+    <string name="world_wonder_loading_view_holder_loading_title">Loading…</string>
+    <string name="world_wonder_loading_view_holder_error_title">Error on load</string>
+    <string name="world_wonder_loading_error_retry_button_title">Try again</string>
 </resources>
