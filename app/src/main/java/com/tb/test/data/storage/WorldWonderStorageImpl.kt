@@ -12,9 +12,8 @@ import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 /**
- * MVP implementation of reading World wonder JSON, it slow it first time,
- * and there is useless memory consumption because it keeps all wonder in memory.
- * Possible refactor idea: Use streamed reading.
+ * Read all data at first call then respond from in memory cache.
+ * Possible refactor: Use streamed reading or cache data in LocalDB (Room or Realm).
  */
 class WorldWonderStorageImpl @Inject constructor(
     private val assetManager: AssetManager,
